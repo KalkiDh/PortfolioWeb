@@ -207,6 +207,11 @@ section {
     font-size: 3rem;
     text-align: center;
     color: #f0f2f5; /* White color for titles */
+    transition: color 0.3s ease-in-out; /* Add transition for smooth color change */
+}
+
+.profile-text .title:hover {
+    color: #DD88CF; /* Change color on hover */
 }
 
 .social-sources {
@@ -268,12 +273,14 @@ section {
 #about {
     position: relative;
     height: 100vh;
+    
 }
 
 .about-containers {
     gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    
 }
 
 .about-details-container {
@@ -283,7 +290,9 @@ section {
 
 .about-containers, .about-details-container {
     display: flex;
+    
 }
+ 
 
 .about-pic {
     border-radius: 2rem;
@@ -304,11 +313,15 @@ section {
     text-align: center;
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
-
-.details-containers:hover {
+.experience-details-container .experience-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+/* .details-containers:hover {
     transform: perspective(1000px) rotateY(10deg) rotateX(10deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
+} */
 
 .section-container {
     gap: 4rem;
@@ -346,15 +359,23 @@ section {
 
 .article-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Change to column layout */
     gap: 2rem;
-    justify-content: space-around;
+}
+
+.details-containers {
+    padding: 1.5rem;
+    flex: 1;
+    background: #555; /* Medium grey background */
+    border-radius: 2rem;
+    border: #f0f2f5 0.1px solid; /* White border */
+    text-align: center;
 }
 
 article {
     display: flex;
     justify-content: space-around;
-    width: 10rem;
+    width: 100%; /* Full width */
     gap: 0.5rem;
 }
 
@@ -513,6 +534,39 @@ img {
     .text-container {
         text-align: center;
     }
+}
+
+.hidden-certificate {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden-certificate.show {
+    display: block;
+    opacity: 1;
+}
+
+.hidden-certificate, .hidden-project {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden-certificate.show, .hidden-project.show {
+    display: block;
+    opacity: 1;
+}
+
+.hidden-certificate, .hidden-project, .hidden-experience {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden-certificate.show, .hidden-project.show, .hidden-experience.show {
+    display: block;
+    opacity: 1;
 }
 
 
